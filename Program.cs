@@ -9,52 +9,68 @@ namespace Zadanie_ParametryTrojkata
     {
         CultureInfo.CurrentCulture = CultureInfo.GetCultureInfo("en-US");
         
+        //zmienna rabat
+        int rabat = 0;
+        Console.WriteLine($"{rabat}");
 
-        //var rabat = 0;
-
-        Console.WriteLine("Proszę podać datę urodzenia");
+        Console.WriteLine("Program obliczy jaki przysługuje Pani/Panu rabat.");
+        Console.WriteLine("Proszę podać datę urodzenia osoby której będzie bilet");
         Console.Write("Miesiąc: ");
-        var miesiacUr = Convert.ToInt32(Console.ReadLine());
-
+        var miesiacUr = Convert.ToInt32(Console.ReadLine().Trim());
         Console.Write("Dzień: ");
-        var dzienUr = Convert.ToInt32(Console.ReadLine());
-
+        var dzienUr = Convert.ToInt32(Console.ReadLine().Trim());
         Console.Write("Rok: ");
-        var rokUr = Convert.ToInt32(Console.ReadLine());
-
+        var rokUr = Convert.ToInt32(Console.ReadLine().Trim());
         DateTime urodz = new DateTime(rokUr, miesiacUr, dzienUr);
 
-        
+        //pobiera dzisiejszą datę
         DateTime dzis = DateTime.Today;
-        Console.WriteLine($"dzis = {dzis}");
 
-       // var compare date= 
-        
-        Console.WriteLine($"pelno {pelno}");
-/*
-        //Console.WriteLine($"{urodz}");
+        //ustala date urodzenia, najmłodszego, 18 latka
+        DateTime pelnoletnosc;
+        pelnoletnosc = dzis.AddYears(-18);
 
-        Console.Write("Proszę podać datę lotu: ");      
+        //ustala date urodzenia, najmłodszego, 2 latka
+        var wiek2lata = dzis.AddYears(-2);
+
+
+        Console.WriteLine("Proszę podać datę lotu");      
         Console.Write("Miesiąc: ");
-        var miesiacLot = Convert.ToInt32(Console.ReadLine());
-
+        var miesiacLot = Convert.ToInt32(Console.ReadLine().Trim());
         Console.Write("Dzień: ");
-        var dzienLot = Convert.ToInt32(Console.ReadLine());
-
+        var dzienLot = Convert.ToInt32(Console.ReadLine().Trim());
         Console.Write("Rok: ");
-        var rokLot = Convert.ToInt32(Console.ReadLine());
-
+        var rokLot = Convert.ToInt32(Console.ReadLine().Trim());
         DateTime dataLot = new DateTime(rokUr, miesiacUr, dzienUr);
 
-        //Console.WriteLine($"{dataLot}");
 
-        Console.WriteLine("Proszę wpisać, czy lot jest krajowy czy międzynarodowy: ");
-        string typLot = Console.ReadLine();
+        Console.WriteLine("Proszę wpisać, czy lot jest krajowy (K) czy międzynarodowy (M): ");
+        string typLot = Console.ReadLine().Trim();
 
-        if(urodz > )
-        Console.WriteLine("Proszę wpisać, czy jesteś stałym klientem (tylko 18+): ");
-        string stalyKlient = Console.ReadLine();
- */
+        //sprawdza czy osoba jest pełnoletnia oraz na tej zasadzie wyświetla opcję stały klient
+        if(pelnoletnosc<urodz) {
+            if(urodz>wiek2lata) {
+                Console.WriteLine("noworodek");
+            }
+            else {
+                if(urodz<=wiek2lata) {
+                    Console.WriteLine("mlodziez");
+                }
+                else {
+                    Console.WriteLine("dzieciak");
+                }
+            }
+        }
+        else {
+            Console.Write("Proszę wpisać, czy jesteś stałym klientem (T/N): ");
+            string stalyKlient = Console.ReadLine().Trim();
+        }
+        
+
+        
+        
+
+
  
     }
   }

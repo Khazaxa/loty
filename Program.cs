@@ -7,6 +7,7 @@ namespace Zadanie_ParametryTrojkata
   {
     static void Main(string[] args)
     {
+        Start:
         CultureInfo.CurrentCulture = CultureInfo.GetCultureInfo("en-US");
         
         //zmienna rabat
@@ -50,18 +51,35 @@ namespace Zadanie_ParametryTrojkata
         //sprawdza czy osoba jest pełnoletnia oraz na tej zasadzie wyświetla opcję stały klient
         if(pelnoletnosc<urodz) {
             if(urodz>wiek2lata) {
-                Console.WriteLine("noworodek");
+                if(urodz>dzis) {
+                    //gdy osoba się nie narodziła wyświetla komunikat i zaczyna program od początku
+                    Console.WriteLine("Ta osoba jeszcze się nie urodziła! Nie potrzebuje biletu!");
+                    goto Start;
+                }
+                else {
+                    //tu liczymy dla wiek <0; 2)
+                    Console.WriteLine("noworodek");
+/*                    if(dataLot<=dzis.AddMonths(5)) {
+                        Console.WriteLine("T");
+                    }
+                    else{
+                        Console.WriteLine("N");
+                    }
+*/                }               
             }
             else {
                 if(urodz<=wiek2lata) {
+                    //tu liczymy gdy wiek <2; 16>
                     Console.WriteLine("mlodziez");
                 }
                 else {
-                    Console.WriteLine("dzieciak");
+                    //tu liczymy dla wiek <17; 18)
+                    Console.WriteLine("17 lat");
                 }
             }
         }
         else {
+            //pelnoletni
             Console.Write("Proszę wpisać, czy jesteś stałym klientem (T/N): ");
             string stalyKlient = Console.ReadLine().Trim();
         }

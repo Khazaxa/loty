@@ -63,9 +63,9 @@ namespace Zadanie_ParametryTrojkata
                 TypLotu:
                 Console.WriteLine("Proszę wpisać, czy lot jest Krajowy (K) czy Międzynarodowy (M): ");
                 string typLot = Console.ReadLine().Trim();
-                //sprawdza czy osoba jest pełnoletnia oraz na tej zasadzie wyświetla opcję stały klient
- 
+                //Tu powinno być sprawdzenie poprawnosci wpisania K lub M i dopiero w tym pętle
         if(pelnoletnosc<urodz){
+//osoby niepelnoletnie
 //###################################################################################################           
             if(typLot == "K"){
                 if(urodz>wiek2lata) {

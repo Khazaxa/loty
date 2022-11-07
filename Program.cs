@@ -16,6 +16,7 @@ namespace Zadanie_ParametryTrojkata
 
         Console.WriteLine("Program obliczy jaki przysługuje Pani/Panu rabat.");
         Console.WriteLine("Proszę podać datę urodzenia osoby której będzie bilet");
+
         Start:
         Console.Write("Miesiąc: ");
         var miesiacUr = Convert.ToInt32(Console.ReadLine().Trim());
@@ -87,20 +88,13 @@ namespace Zadanie_ParametryTrojkata
                     }
                     else {
                         //tu liczymy dla wiek <0; 2)
-
+                        rabat+=80;
                         //rabat 5 mies
                         if (result5mies > 0){
-                            //5mies>lot
                             //nie naliczamy znizki
                             Console.WriteLine($"nie naliczamy znizki");
                         }
-                        else if (result5mies == 0){
-                            //data lotu taka sama jak data minimalna dla znizki 5 miesiecy
-                            //naliczamy znizke
-                            Console.WriteLine($"jest ta data naliczamy znizke");
-                        }
-                        else if(result5mies < 0){
-                            //5mies<lot
+                        else if(result5mies <= 0){
                             //naliczamy znizke
                             Console.WriteLine($"jest pozniej naliczamy znizke");
                         }
@@ -121,21 +115,12 @@ namespace Zadanie_ParametryTrojkata
                         
                         //rabat 5 mies
                         if (result5mies > 0){
-                            //5mies>lot
                             //nie naliczamy znizki
-                            //Console.WriteLine($"nie naliczamy znizki = {rabat}");
                         }
-                        else if (result5mies == 0){
-                            //data lotu taka sama jak data minimalna dla znizki 5 miesiecy
-                            //naliczamy znizke
-                            rabat+=10;
-                            //Console.WriteLine($"jest ta data naliczamy znizke = {rabat}");
-                        }
-                        else if(result5mies < 0){
+                        else if(result5mies <= 0){
                             //5mies<lot
                             //naliczamy znizke
                             rabat+=10;
-                            //Console.WriteLine($"jest pozniej naliczamy znizke = {rabat}");
                         }
 
                         //ogranicznik rabatu <2; 17)
@@ -152,21 +137,11 @@ namespace Zadanie_ParametryTrojkata
 
                         //rabat 5 mies
                         if (result5mies > 0){
-                            //5mies>lot
                             //nie naliczamy znizki
-                            //Console.WriteLine($"nie naliczamy znizki = {rabat}");
                         }
-                        else if (result5mies == 0){
-                            //data lotu taka sama jak data minimalna dla znizki 5 miesiecy
+                        else if(result5mies <= 0){
                             //naliczamy znizke
                             rabat+=10;
-                            //Console.WriteLine($"jest ta data naliczamy znizke = {rabat}");
-                        }
-                        else if(result5mies < 0){
-                            //5mies<lot
-                            //naliczamy znizke
-                            rabat+=10;
-                            //Console.WriteLine($"jest pozniej naliczamy znizke = {rabat}");
                         }
 
                         //ogranicznik rabatu <17; 18)
@@ -195,19 +170,11 @@ namespace Zadanie_ParametryTrojkata
 
                         //rabat 5 miesiecy
                         if (result5mies > 0){
-                            //5mies>lot
                             //nie naliczamy znizki
-                            Console.WriteLine($"nie naliczamy znizki");
                         }
-                        else if (result5mies == 0){
-                            //data lotu taka sama jak data minimalna dla znizki 5 miesiecy
+                        else if(result5mies <= 0){
                             //naliczamy znizke
-                            Console.WriteLine($"jest ta data naliczamy znizke");
-                        }
-                        else if(result5mies < 0){
-                            //5mies<lot
-                            //naliczamy znizke
-                            Console.WriteLine($"jest pozniej naliczamy znizke");
+                            rabat+=10;
                         }
 
 
@@ -222,9 +189,7 @@ namespace Zadanie_ParametryTrojkata
                         }
                         else{
                             //naliczamy znizke
-                            Console.WriteLine($"Sezon rabat przed: {rabat}");
                             rabat+=15;
-                            Console.WriteLine($"Sezon po naliczeniu: {rabat}");
                         }
 
                         //ogranicznik rabatu niemowle
@@ -254,9 +219,7 @@ namespace Zadanie_ParametryTrojkata
                         }
                         else{
                             //naliczamy znizke
-                            Console.WriteLine($"Sezon rabat przed: {rabat}");
                             rabat+=15;
-                            Console.WriteLine($"Sezon po naliczeniu: {rabat}");
                         }
 
                         //ogranicznik rabatu <2; 17)
@@ -284,9 +247,7 @@ namespace Zadanie_ParametryTrojkata
                         }
                         else{
                             //naliczamy znizke
-                            Console.WriteLine($"Sezon rabat przed: {rabat}");
                             rabat+=15;
-                            Console.WriteLine($"Sezon po naliczeniu: {rabat}");
                         }
 
                         //ogranicznik rabatu <17; 18)
@@ -312,57 +273,21 @@ namespace Zadanie_ParametryTrojkata
                     if(typLot == "K"){
                         //rabat 5 mies
                         if (result5mies > 0){
-                            //5mies>lot
                             //nie naliczamy znizki
-                            Console.WriteLine($"nie naliczamy znizki");
                         }
-                        else if (result5mies == 0){
-                                //data lotu taka sama jak data minimalna dla znizki 5 miesiecy
+                        else if(result5mies <= 0){
                                 //naliczamy znizke
-                                
-                                
-                                Console.WriteLine($"jest ta data naliczamy znizke");
-                                Console.WriteLine($"Rabat przed naliczeniem: {rabat}");
                                 rabat+=10;
-                                Console.WriteLine($"Znizka po naliczeniu: {rabat}");
-                        }
-                        else if(result5mies < 0){
-                                //5mies<lot
-                                //naliczamy znizke
-                                
-                                
-                                Console.WriteLine($"jest pozniej naliczamy znizke");
-                                Console.WriteLine($"Rabat przed naliczeniem: {rabat}");
-                                rabat+=10;
-                                Console.WriteLine($"Znizka po naliczeniu: {rabat}");
                         }
                     }                
 //###################################################################################################            
                     else if (typLot == "M"){
                         //rabat 5 mies
                         if (result5mies > 0){
-                            //5mies>lot
                             //nie naliczamy znizki
-                            Console.WriteLine($"nie naliczamy znizki");
                         }
-                        else if (result5mies == 0){
-                                //data lotu taka sama jak data minimalna dla znizki 5 miesiecy
-                                //naliczamy znizke
-                                
-                                
-                                Console.WriteLine($"jest ta data naliczamy znizke");
-                                Console.WriteLine($"Rabat przed naliczeniem: {rabat}");
+                        else if(result5mies <= 0){
                                 rabat+=10;
-                                Console.WriteLine($"Rabat po naliczeniu: {rabat}");
-                        }
-                        else if(result5mies < 0){
-                                //5mies<lot
-                                //naliczamy znizke
-                                
-                                Console.WriteLine($"jest pozniej naliczamy znizke");
-                                Console.WriteLine($"Rabat przed naliczeniem: {rabat}");
-                                rabat+=10;
-                                Console.WriteLine($"Rabat po naliczeniu: {rabat}");
                         }
 
                         
@@ -377,9 +302,7 @@ namespace Zadanie_ParametryTrojkata
                         }
                         else{
                             //naliczamy znizke
-                            Console.WriteLine($"Sezon rabat przed: {rabat}");
                             rabat+=15;
-                            Console.WriteLine($"Sezon po naliczeniu: {rabat}");
                         }
                     } 
 //###################################################################################################            
@@ -391,17 +314,17 @@ namespace Zadanie_ParametryTrojkata
 //###################################################################################################
                     //obsługa rabatu stałego klienta
                     Console.Write("Proszę wpisać, czy jesteś stałym klientem (T/N): ");
+                    KlientStaly:
                     string stalyKlient = Console.ReadLine().Trim();
-
+                    
                     if(stalyKlient == "T"){
-                        Console.WriteLine($"Staly Klient przed naliczeniem: {rabat}");
                         rabat+=10;
-                        Console.WriteLine($"Po naliczeniu: {rabat}");
                     }
                     else if(stalyKlient == "N"){    
                     }
                     else {
                         Console.WriteLine("Proszę wpisać (T) jeśli jesteś stałym klientem, lub (N) jeśli nie jesteś stałym klientem");
+                        goto KlientStaly;
                     }
   
                      //ogranicznik rabatu dorosłego

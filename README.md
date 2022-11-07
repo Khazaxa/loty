@@ -13,4 +13,4 @@ nie może przekroczyć 80%, zaś dla pozostałych – 30%.
 
 
 
-!(){img/samolot.png}
+![]{img/samolot.png)

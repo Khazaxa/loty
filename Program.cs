@@ -12,7 +12,6 @@ namespace Zadanie_ParametryTrojkata
         
         //zmienna rabat
         int rabat = 0;
-        //Console.WriteLine($"{rabat}");
 
         Console.WriteLine("Program obliczy jaki przysługuje Pani/Panu rabat.");
         Console.WriteLine("Proszę podać datę urodzenia osoby której będzie bilet");
@@ -29,6 +28,7 @@ namespace Zadanie_ParametryTrojkata
         //pobiera daty
         DateTime dzis = DateTime.Today;
         DateTime za5mies = dzis.AddMonths(5);
+        DateTime wiek17 = dzis.AddYears(-17);
         DateTime pelnoletnosc = dzis.AddYears(-18);
         DateTime wiek2lata = dzis.AddYears(-2);
         
@@ -73,224 +73,251 @@ namespace Zadanie_ParametryTrojkata
             }
             else{
                 TypLotu:
-                Console.WriteLine("Proszę wpisać, czy lot jest Krajowy (K) czy Międzynarodowy (M): ");
+                Console.Write("Proszę wpisać, czy lot jest Krajowy (K) czy Międzynarodowy (M): ");
                 string typLot = Console.ReadLine().Trim();
                 //sprawdza czy osoba jest pełnoletnia oraz na tej zasadzie wyświetla opcję stały klient
  
                 if(pelnoletnosc<urodz){
-//###################################################################################################           
-            if(typLot == "K"){
-                if(urodz>wiek2lata) {
-                    if(urodz>dzis) {
-                        //gdy osoba się nie narodziła wyświetla komunikat i zaczyna program od początku
-                        Console.WriteLine("Ta osoba jeszcze się nie urodziła! Nie potrzebuje biletu!");
-                        goto Start;
-                    }
-                    else {
-                        //tu liczymy dla wiek <0; 2)
-                        rabat+=80;
-                        //rabat 5 mies
-                        if (result5mies > 0){
-                            //nie naliczamy znizki
-                            Console.WriteLine($"nie naliczamy znizki");
-                        }
-                        else if(result5mies <= 0){
-                            //naliczamy znizke
-                            Console.WriteLine($"jest pozniej naliczamy znizke");
-                        }
-
-                        //ogranicznik rabatu niemowle
-                        if(rabat>80){
-                            rabat=80;
-                            Console.WriteLine($"Twój rabat wynosi {rabat}%");
-                        }
-                        else{
-                            Console.WriteLine($"Twój rabat wynosi: {rabat}%");
-                        }
-                  }               
-                }
-                else {
-                    if(urodz<=wiek2lata) {
-                        //tu liczymy gdy wiek <2; 17)
-                        
-                        //rabat 5 mies
-                        if (result5mies > 0){
-                            //nie naliczamy znizki
-                        }
-                        else if(result5mies <= 0){
-                            //5mies<lot
-                            //naliczamy znizke
-                            rabat+=10;
-                        }
-
-                        //ogranicznik rabatu <2; 17)
-                        if(rabat>30){
-                        rabat=30;
-                        Console.WriteLine($"Twój rabat wynosi {rabat}%");
-                        }
-                        else{
-                            Console.WriteLine($"Twój rabat wynosi: {rabat}%");
-                        }
-                    }
-                    else {
-                        //tu liczymy dla wiek <17; 18)
-
-                        //rabat 5 mies
-                        if (result5mies > 0){
-                            //nie naliczamy znizki
-                        }
-                        else if(result5mies <= 0){
-                            //naliczamy znizke
-                            rabat+=10;
-                        }
-
-                        //ogranicznik rabatu <17; 18)
-                        if(rabat>30){
-                            rabat=30;
-                            Console.WriteLine($"Twój rabat wynosi {rabat}%");
-                        }
-                        else{
-                            Console.WriteLine($"Twój rabat wynosi: {rabat}%");
-                        }
-                    }
-                }
-            }
-//###################################################################################################            
-            else if (typLot == "M")
-            {
-                if(urodz>wiek2lata) {
-                    if(urodz>dzis) {
-                        //gdy osoba się nie narodziła wyświetla komunikat i zaczyna program od początku
-                        Console.WriteLine("Ta osoba jeszcze się nie urodziła! Nie potrzebuje biletu!");
-                        goto Start;
-                    }
-                    else {
-                        //tu liczymy dla wiek <0; 2)
-                        Console.WriteLine("noworodek");
-
-                        //rabat 5 miesiecy
-                        if (result5mies > 0){
-                            //nie naliczamy znizki
-                        }
-                        else if(result5mies <= 0){
-                            //naliczamy znizke
-                            rabat+=10;
-                        }
-
-
-                        //rabat sezonowy
-                        if(dataLot>=sezonZimowyStart && dataLot<=sezonZimowyKoniec){
-                            //nie naliczamy znizki
-                        }
-                        else if (dataLot>=sezonLetniStart && dataLot<=sezonLetniKoniec){
-                            //nie naliczamy znizki
-                        }
-                        else if(dataLot>=Lipiec && dataLot<=Sierpien){
-                        }
-                        else{
-                            //naliczamy znizke
-                            rabat+=15;
-                        }
-
-                        //ogranicznik rabatu niemowle
-                        if(rabat>70){
-                            rabat=70;
-                            Console.WriteLine($"Twój rabat wynosi {rabat}%");
-                        }
-                        else{
-                            Console.WriteLine($"Twój rabat wynosi: {rabat}%");
-                        }
-                    }               
-                }
-                else {
-                    if(urodz<=wiek2lata) {
-                        //tu liczymy gdy wiek <2; 17)
-                        Console.WriteLine("mlodziez");
-
-
-                        //rabat sezonowy
-                        if(dataLot>=sezonZimowyStart && dataLot<=sezonZimowyKoniec){
-                            //nie naliczamy znizki
-                        }
-                        else if (dataLot>=sezonLetniStart && dataLot<=sezonLetniKoniec){
-                            //nie naliczamy znizki
-                        }
-                        else if(dataLot>=Lipiec && dataLot<=Sierpien){
-                        }
-                        else{
-                            //naliczamy znizke
-                            rabat+=15;
-                        }
-
-                        //ogranicznik rabatu <2; 17)
-                        if(rabat>30){
-                            rabat=30;
-                            Console.WriteLine($"Twój rabat wynosi {rabat}%");
-                        }
-                        else{
-                            Console.WriteLine($"Twój rabat wynosi: {rabat}%");
-                        }
-                    }
-                    else {
-                        //tu liczymy dla wiek <17; 18)
-                        Console.WriteLine("17 lat");
-
-
-                        //rabat sezonowy
-                        if(dataLot>=sezonZimowyStart && dataLot<=sezonZimowyKoniec){
-                            //nie naliczamy znizki
-                        }
-                        else if (dataLot>=sezonLetniStart && dataLot<=sezonLetniKoniec){
-                            //nie naliczamy znizki
-                        }
-                        else if(dataLot>=Lipiec && dataLot<=Sierpien){
-                        }
-                        else{
-                            //naliczamy znizke
-                            rabat+=15;
-                        }
-
-                        //ogranicznik rabatu <17; 18)
-                        if(rabat>30){
-                            rabat=30;
-                            Console.WriteLine($"Twój rabat wynosi {rabat}%");
-                        }
-                        else{
-                            Console.WriteLine($"Twój rabat wynosi: {rabat}%");
-                        }
-                    }
-                }
-            }
-            else {
-                Console.WriteLine("Proszę wpisać K - jeśli Krajowy, M - jeśli międzynarodowy");
-                Console.WriteLine("");
-                goto TypLotu;
-            }        
-        }
-                else {
-                    //pelnoletni
-//###################################################################################################            
+                    //niepelno
                     if(typLot == "K"){
-                        //rabat 5 mies
-                        if (result5mies > 0){
-                            //nie naliczamy znizki
-                        }
-                        else if(result5mies <= 0){
-                                //naliczamy znizke
+                        if(urodz>wiek2lata){
+                            //wiek < 2
+                            rabat+=80;
+
+                            //rabat 5 mies
+                            if (result5mies > 0){
+                                //nie naliczamy znizki
+                            }
+                            else if(result5mies <= 0){
                                 rabat+=10;
+                            }
+
+                            //ogranicznik rabatu niemowle
+                            if(rabat>80){
+                                rabat=80;
+                                Console.WriteLine($"Twój rabat wynosi {rabat}%");
+                            }
+                            else{
+                                Console.WriteLine($"Twój rabat wynosi: {rabat}%");
+                            }
                         }
-                    }                
-//###################################################################################################            
+                        else if(urodz<=wiek2lata && urodz>wiek17){
+                            //wiek <2; 17)
+                            rabat+=10;
+
+                            //rabat 5 mies
+                            if (result5mies > 0){
+                                //nie naliczamy znizki
+                            }
+                            else if(result5mies <= 0){
+                                rabat+=10;
+                            }
+
+                            //ogranicznik rabatu 
+                            if(rabat>30){
+                                rabat=30;
+                                Console.WriteLine($"Twój rabat wynosi {rabat}%");
+                            }
+                            else{
+                                Console.WriteLine($"Twój rabat wynosi: {rabat}%");
+                            }
+                        }
+                        else if(urodz<=wiek17){
+                            //wiek <17; 18)
+                                        
+                            //rabat 5 mies
+                            if (result5mies > 0){
+                                //nie naliczamy znizki
+                            }
+                            else if(result5mies <= 0){
+                                rabat+=10;
+                            }
+
+                            //ogranicznik rabatu 
+                                if(rabat>30){
+                                rabat=30;
+                                Console.WriteLine($"Twój rabat wynosi {rabat}%");
+                            }
+                            else{
+                                Console.WriteLine($"Twój rabat wynosi: {rabat}%");
+                            }
+                        }
+                    }
                     else if (typLot == "M"){
+                        if(urodz>wiek2lata){
+                            //wiek < 2
+                            rabat+=70;
+                                        
+                            //rabat 5 mies
+                            if(result5mies > 0){
+                                //nie naliczamy znizki
+                            }
+                            else if(result5mies <= 0){
+                                rabat+=10;
+                            }
+
+                            //rabat sezonowy
+                            if(dataLot>=sezonZimowyStart && dataLot<=sezonZimowyKoniec){
+                                //nie naliczamy znizki
+                            }
+                            else if (dataLot>=sezonLetniStart && dataLot<=sezonLetniKoniec){
+                                //nie naliczamy znizki
+                            }
+                            else if(dataLot>=Lipiec && dataLot<=Sierpien){
+                            }
+                            else{
+                                //naliczamy znizke
+                                rabat+=15;
+                            }
+
+                            //ogranicznik rabatu 
+                            if(rabat>80){
+                                rabat=80;
+                                Console.WriteLine($"Twój rabat wynosi {rabat}%");
+                            }
+                            else{
+                                Console.WriteLine($"Twój rabat wynosi: {rabat}%");
+                            }
+
+                        }
+                        else if(urodz<=wiek2lata && urodz>wiek17){
+                            //wiek <2; 17)
+                            rabat+=10;
+
+                            //rabat 5 mies
+                            if (result5mies > 0){
+                                //nie naliczamy znizki
+                            }
+                            else if(result5mies <= 0){
+                                rabat+=10;
+                            }
+
+                            //rabat sezonowy
+                            if(dataLot>=sezonZimowyStart && dataLot<=sezonZimowyKoniec){
+                                //nie naliczamy znizki
+                            }
+                            else if (dataLot>=sezonLetniStart && dataLot<=sezonLetniKoniec){
+                                //nie naliczamy znizki
+                            }
+                            else if(dataLot>=Lipiec && dataLot<=Sierpien){
+                                //nie naliczamy znizki
+                            }
+                            else{
+                                //naliczamy znizke
+                                rabat+=15;
+                            }
+
+                            //ogranicznik rabatu 
+                            if(rabat>30){
+                                rabat=30;
+                                Console.WriteLine($"Twój rabat wynosi {rabat}%");
+                            }
+                            else{
+                                Console.WriteLine($"Twój rabat wynosi: {rabat}%");
+                            }
+
+                        }
+                        else if(urodz<=wiek17){
+                            //wiek <17; 18)
+                                        
+                            //rabat 5 mies
+                            if (result5mies > 0){
+                                //nie naliczamy znizki
+                            }
+                            else if(result5mies <= 0){
+                                rabat+=10;
+                            }
+
+                            //rabat sezonowy
+                            if(dataLot>=sezonZimowyStart && dataLot<=sezonZimowyKoniec){
+                                //nie naliczamy znizki
+                            }
+                            else if (dataLot>=sezonLetniStart && dataLot<=sezonLetniKoniec){
+                                //nie naliczamy znizki
+                            }
+                            else if(dataLot>=Lipiec && dataLot<=Sierpien){
+                                //nie naliczamy znizki
+                            }
+                            else{
+                                //naliczamy znizke
+                                rabat+=15;
+                            }
+
+                            //ogranicznik rabatu
+                            if(rabat>30){
+                                rabat=30;
+                                Console.WriteLine($"Twój rabat wynosi {rabat}%");
+                            }
+                            else{
+                                Console.WriteLine($"Twój rabat wynosi: {rabat}%");
+                            }
+
+                        }  
+                        else{
+                            Console.WriteLine("Proszę wpisać K - jeśli Krajowy, M - jeśli międzynarodowy");
+                            Console.WriteLine("");
+                            goto TypLotu;
+                        }
+                    }
+                    else{     
+                        Console.WriteLine("Proszę PONOWNIE wpisać K - jeśli Krajowy, M - jeśli międzynarodowy");
+                        Console.WriteLine("");
+                        goto TypLotu;               
+                    }
+                }
+                else{
+                    //pelno
+                    if(typLot == "K"){
+                        //obsługa rabatu stałego klienta
+                        Console.Write("Proszę wpisać, czy jesteś stałym klientem (T/N): ");
+                        KlientStaly:
+                        string stalyKlient = Console.ReadLine().Trim();
+
                         //rabat 5 mies
                         if (result5mies > 0){
                             //nie naliczamy znizki
                         }
                         else if(result5mies <= 0){
-                                rabat+=10;
+                            rabat+=10;
                         }
 
-                        
+                        //rabat staly klient
+                        if(stalyKlient == "T"){
+                            rabat+=15;
+                        }
+                        else if(stalyKlient == "N"){    
+                            //nie naliczamy rabatu  
+                        }
+                        else {
+                            Console.Write("Proszę PONOWNIE wpisać (T) jeśli jesteś stałym klientem, lub (N) jeśli nie jesteś stałym klientem:");
+                            Console.Write(" ");
+                            goto KlientStaly;
+                        }
+
+                        //ogranicznik rabatu
+                        if(rabat>30){
+                            rabat=30;
+                            Console.WriteLine($"Twój rabat wynosi {rabat}%");
+                        }
+                        else{
+                            Console.WriteLine($"Twój rabat wynosi: {rabat}%");
+                        }
+                    }
+                    else if (typLot == "M"){
+
+                        //obsługa rabatu stałego klienta
+                        Console.Write("Proszę wpisać, czy jesteś stałym klientem (T/N): ");
+                        KlientStaly:
+                        string stalyKlient = Console.ReadLine().Trim();
+
+                        //rabat 5 mies
+                        if (result5mies > 0){
+                            //nie naliczamy znizki
+                        }
+                        else if(result5mies <= 0){
+                            rabat+=10;
+                        }
+
                         //rabat sezonowy
                         if(dataLot>=sezonZimowyStart && dataLot<=sezonZimowyKoniec){
                             //nie naliczamy znizki
@@ -299,64 +326,43 @@ namespace Zadanie_ParametryTrojkata
                             //nie naliczamy znizki
                         }
                         else if(dataLot>=Lipiec && dataLot<=Sierpien){
+                            //nie naliczamy znizki
                         }
                         else{
                             //naliczamy znizke
                             rabat+=15;
                         }
-                    } 
-//###################################################################################################            
-                    else {
-                        Console.WriteLine("Proszę wpisać K - jeśli Krajowy, M - jeśli międzynarodowy");
+
+                        //rabat staly klient
+                        if(stalyKlient == "T"){
+                            rabat+=15;
+                        }
+                        else if(stalyKlient == "N"){  
+                            //nie naliczamy rabatu  
+                        }
+                        else {
+                            Console.Write("Proszę PONOWNIE wpisać (T) jeśli jesteś stałym klientem, lub (N) jeśli nie jesteś stałym klientem:");
+                            Console.Write(" ");
+                            goto KlientStaly;
+                        }
+
+                        //ogranicznik rabatu
+                        if(rabat>30){
+                            rabat=30;
+                            Console.WriteLine($"Twój rabat wynosi {rabat}%");
+                        }
+                        else{
+                            Console.WriteLine($"Twój rabat wynosi: {rabat}%");
+                        }
+                    }
+                    else{
+                        Console.WriteLine("Proszę PONOWNIE wpisać K - jeśli Krajowy, M - jeśli międzynarodowy");
                         Console.WriteLine("");
                         goto TypLotu;
                     }
-//###################################################################################################
-                    //obsługa rabatu stałego klienta
-                    Console.Write("Proszę wpisać, czy jesteś stałym klientem (T/N): ");
-                    KlientStaly:
-                    string stalyKlient = Console.ReadLine().Trim();
-                    
-                    if(stalyKlient == "T"){
-                        rabat+=10;
-                    }
-                    else if(stalyKlient == "N"){    
-                    }
-                    else {
-                        Console.WriteLine("Proszę wpisać (T) jeśli jesteś stałym klientem, lub (N) jeśli nie jesteś stałym klientem");
-                        goto KlientStaly;
-                    }
-  
-                     //ogranicznik rabatu dorosłego
-                        if(rabat>30){
-                            rabat=30;
-                            Console.WriteLine($"Twój rabat wynosi {rabat}%");
-                        }
-                        else{
-                            Console.WriteLine($"Twój rabat wynosi: {rabat}%");
-                        }
                 }
-
-            }    
-        } 
-
-
-
-
-
-
-
-/*
-
-Obsługa Krajowy/Miedzynarodowy
-Obsluga Staly Klient
-Obsługa wieku
-*/
-        
-        
-
-
- 
-    }
+            }
+        }    
+    } 
   }
 }

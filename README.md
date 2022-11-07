@@ -1,5 +1,4 @@
-Program dla linii Lotniczych
-
+Program dla linii Lotniczych liczący zniżkę na bilety.
 
 ![](img/samolot.png)
 

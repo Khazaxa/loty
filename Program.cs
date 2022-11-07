@@ -78,7 +78,7 @@ namespace Zadanie_ParametryTrojkata
                 //sprawdza czy osoba jest pełnoletnia oraz na tej zasadzie wyświetla opcję stały klient
  
                 if(pelnoletnosc<urodz){
-                    //niepelno
+                    //niepelnoletni
                     if(typLot == "K"){
                         if(urodz>wiek2lata){
                             //wiek < 2
@@ -92,7 +92,7 @@ namespace Zadanie_ParametryTrojkata
                                 rabat+=10;
                             }
 
-                            //ogranicznik rabatu niemowle
+                            //ogranicznik rabatu 
                             if(rabat>80){
                                 rabat=80;
                                 Console.WriteLine($"Twój rabat wynosi {rabat}%");
@@ -266,7 +266,7 @@ namespace Zadanie_ParametryTrojkata
                     }
                 }
                 else{
-                    //pelno
+                    //pelnoletni
                     if(typLot == "K"){
                         //obsługa rabatu stałego klienta
                         Console.Write("Proszę wpisać, czy jesteś stałym klientem (T/N): ");

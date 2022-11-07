@@ -1,4 +1,6 @@
-  Dla pasażerów niemowląt w wieku poniżej 2 lat na rejsach krajowych przysługuje rabat w
+![](img/samolot.png)
+
+Dla pasażerów niemowląt w wieku poniżej 2 lat na rejsach krajowych przysługuje rabat w
 wysokości 80%. Na trasach międzynarodowych rabat ten wynosi 70%. Dla młodzieży (od 2 do 16
 lat) przysługuje rabat w wysokości 10%, zarówno na trasach krajowych jak i międzynarodowych.
 Pasażerom, którzy rezerwują lot na 5 miesięcy przed podróżą, przysługuje rabat w wysokości
@@ -13,4 +15,4 @@ nie może przekroczyć 80%, zaś dla pozostałych – 30%.
 
 
 
-![](img/samolot.png)
+

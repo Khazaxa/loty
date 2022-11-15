@@ -61,11 +61,11 @@ namespace Zadanie_ParametryTrojkata
             DateTime Lipiec = new DateTime(rokLot, 07, 01);
             DateTime Sierpien = new DateTime(rokLot, 08, 31);
 
-
             //porownoje daty      
             int result5mies = DateTime.Compare(za5mies, dataLot);
 
-            if(dataLot<dzis) {
+
+            if(dataLot<dzis){
                 //gdy data lotu jest wcześniejsza niz dziś wyświetla komunikat i zaczyna program od początku
                 Console.WriteLine("Nie sprzedajemy biletów na ten lot! Lot już się odbył!");
                 Console.WriteLine("Proszę PONOWNIE podać datę lotu");  
@@ -85,7 +85,7 @@ namespace Zadanie_ParametryTrojkata
                             rabat+=80;
 
                             //rabat 5 mies
-                            if (result5mies > 0){
+                            if(result5mies > 0){
                                 //nie naliczamy znizki
                             }
                             else if(result5mies <= 0){
@@ -106,7 +106,7 @@ namespace Zadanie_ParametryTrojkata
                             rabat+=10;
 
                             //rabat 5 mies
-                            if (result5mies > 0){
+                            if(result5mies > 0){
                                 //nie naliczamy znizki
                             }
                             else if(result5mies <= 0){
@@ -126,7 +126,7 @@ namespace Zadanie_ParametryTrojkata
                             //wiek <17; 18)
                                         
                             //rabat 5 mies
-                            if (result5mies > 0){
+                            if(result5mies > 0){
                                 //nie naliczamy znizki
                             }
                             else if(result5mies <= 0){
@@ -178,11 +178,9 @@ namespace Zadanie_ParametryTrojkata
                             else{
                                 Console.WriteLine($"Twój rabat wynosi: {rabat}%");
                             }
-
                         }
                         else if(urodz<=wiek2lata && urodz>wiek17){
-                            
-
+                            //wiek <2; 17)
                             //rabat sezonowy
                             if(dataLot>=sezonZimowyStart && dataLot<=sezonZimowyKoniec){
                                 //nie naliczamy znizki
@@ -194,11 +192,9 @@ namespace Zadanie_ParametryTrojkata
                                 //nie naliczamy znizki
                             }
                             else{
+                                rabat+=10;
                                 //naliczamy znizke
                                 rabat+=15;
-
-                                //wiek <2; 17)
-                                rabat+=10;
 
                                 //rabat 5 mies
                                 if (result5mies > 0){
@@ -217,13 +213,9 @@ namespace Zadanie_ParametryTrojkata
                             else{
                                 Console.WriteLine($"Twój rabat wynosi: {rabat}%");
                             }
-
                         }
                         else if(urodz<=wiek17){
                             //wiek <17; 18)
-                                        
-                            
-
                             //rabat sezonowy
                             if(dataLot>=sezonZimowyStart && dataLot<=sezonZimowyKoniec){
                                 //nie naliczamy znizki
@@ -255,7 +247,6 @@ namespace Zadanie_ParametryTrojkata
                             else{
                                 Console.WriteLine($"Twój rabat wynosi: {rabat}%");
                             }
-
                         }  
                         else{
                             Console.WriteLine("Proszę wpisać K - jeśli Krajowy, M - jeśli międzynarodowy");
@@ -314,8 +305,6 @@ namespace Zadanie_ParametryTrojkata
                         KlientStaly:
                         string stalyKlient = Console.ReadLine().Trim();
 
-                       
-
                         //rabat sezonowy
                         if(dataLot>=sezonZimowyStart && dataLot<=sezonZimowyKoniec){
                             //nie naliczamy znizki
@@ -331,7 +320,7 @@ namespace Zadanie_ParametryTrojkata
                             rabat+=15;
 
                              //rabat 5 mies
-                            if (result5mies > 0){
+                            if(result5mies > 0){
                                 //nie naliczamy znizki
                             }
                             else if(result5mies <= 0){
@@ -353,7 +342,6 @@ namespace Zadanie_ParametryTrojkata
                         }
 
                         
-
                         //ogranicznik rabatu
                         if(rabat>30){
                             rabat=30;

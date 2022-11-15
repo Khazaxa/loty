@@ -181,16 +181,7 @@ namespace Zadanie_ParametryTrojkata
 
                         }
                         else if(urodz<=wiek2lata && urodz>wiek17){
-                            //wiek <2; 17)
-                            rabat+=10;
-
-                            //rabat 5 mies
-                            if (result5mies > 0){
-                                //nie naliczamy znizki
-                            }
-                            else if(result5mies <= 0){
-                                rabat+=10;
-                            }
+                            
 
                             //rabat sezonowy
                             if(dataLot>=sezonZimowyStart && dataLot<=sezonZimowyKoniec){
@@ -205,6 +196,17 @@ namespace Zadanie_ParametryTrojkata
                             else{
                                 //naliczamy znizke
                                 rabat+=15;
+
+                                //wiek <2; 17)
+                                rabat+=10;
+
+                                //rabat 5 mies
+                                if (result5mies > 0){
+                                    //nie naliczamy znizki
+                                }
+                                else if(result5mies <= 0){
+                                    rabat+=10;
+                                }
                             }
 
                             //ogranicznik rabatu 
@@ -220,13 +222,7 @@ namespace Zadanie_ParametryTrojkata
                         else if(urodz<=wiek17){
                             //wiek <17; 18)
                                         
-                            //rabat 5 mies
-                            if (result5mies > 0){
-                                //nie naliczamy znizki
-                            }
-                            else if(result5mies <= 0){
-                                rabat+=10;
-                            }
+                            
 
                             //rabat sezonowy
                             if(dataLot>=sezonZimowyStart && dataLot<=sezonZimowyKoniec){
@@ -241,6 +237,14 @@ namespace Zadanie_ParametryTrojkata
                             else{
                                 //naliczamy znizke
                                 rabat+=15;
+
+                                //rabat 5 mies
+                                if (result5mies > 0){
+                                    //nie naliczamy znizki
+                                }
+                                else if(result5mies <= 0){
+                                    rabat+=10;
+                                }
                             }
 
                             //ogranicznik rabatu
@@ -310,13 +314,7 @@ namespace Zadanie_ParametryTrojkata
                         KlientStaly:
                         string stalyKlient = Console.ReadLine().Trim();
 
-                        //rabat 5 mies
-                        if (result5mies > 0){
-                            //nie naliczamy znizki
-                        }
-                        else if(result5mies <= 0){
-                            rabat+=10;
-                        }
+                       
 
                         //rabat sezonowy
                         if(dataLot>=sezonZimowyStart && dataLot<=sezonZimowyKoniec){
@@ -331,20 +329,30 @@ namespace Zadanie_ParametryTrojkata
                         else{
                             //naliczamy znizke
                             rabat+=15;
+
+                             //rabat 5 mies
+                            if (result5mies > 0){
+                                //nie naliczamy znizki
+                            }
+                            else if(result5mies <= 0){
+                                rabat+=10;
+                            }
+
+                            //rabat staly klient
+                            if(stalyKlient == "T"){
+                                rabat+=15;
+                            }
+                            else if(stalyKlient == "N"){  
+                                //nie naliczamy rabatu  
+                            }
+                            else {
+                                Console.Write("Proszę PONOWNIE wpisać (T) jeśli jesteś stałym klientem, lub (N) jeśli nie jesteś stałym klientem:");
+                                Console.Write(" ");
+                                goto KlientStaly;
+                            }
                         }
 
-                        //rabat staly klient
-                        if(stalyKlient == "T"){
-                            rabat+=15;
-                        }
-                        else if(stalyKlient == "N"){  
-                            //nie naliczamy rabatu  
-                        }
-                        else {
-                            Console.Write("Proszę PONOWNIE wpisać (T) jeśli jesteś stałym klientem, lub (N) jeśli nie jesteś stałym klientem:");
-                            Console.Write(" ");
-                            goto KlientStaly;
-                        }
+                        
 
                         //ogranicznik rabatu
                         if(rabat>30){

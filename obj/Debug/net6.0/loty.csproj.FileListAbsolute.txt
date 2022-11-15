@@ -1,0 +1,15 @@
+C:\Users\Jakub Korban\Documents\GitHub\loty\bin\Debug\net6.0\loty.exe
+C:\Users\Jakub Korban\Documents\GitHub\loty\bin\Debug\net6.0\loty.deps.json
+C:\Users\Jakub Korban\Documents\GitHub\loty\bin\Debug\net6.0\loty.runtimeconfig.json
+C:\Users\Jakub Korban\Documents\GitHub\loty\bin\Debug\net6.0\loty.dll
+C:\Users\Jakub Korban\Documents\GitHub\loty\bin\Debug\net6.0\loty.pdb
+C:\Users\Jakub Korban\Documents\GitHub\loty\obj\Debug\net6.0\loty.csproj.AssemblyReference.cache
+C:\Users\Jakub Korban\Documents\GitHub\loty\obj\Debug\net6.0\loty.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jakub Korban\Documents\GitHub\loty\obj\Debug\net6.0\loty.AssemblyInfoInputs.cache
+C:\Users\Jakub Korban\Documents\GitHub\loty\obj\Debug\net6.0\loty.AssemblyInfo.cs
+C:\Users\Jakub Korban\Documents\GitHub\loty\obj\Debug\net6.0\loty.csproj.CoreCompileInputs.cache
+C:\Users\Jakub Korban\Documents\GitHub\loty\obj\Debug\net6.0\loty.dll
+C:\Users\Jakub Korban\Documents\GitHub\loty\obj\Debug\net6.0\refint\loty.dll
+C:\Users\Jakub Korban\Documents\GitHub\loty\obj\Debug\net6.0\loty.pdb
+C:\Users\Jakub Korban\Documents\GitHub\loty\obj\Debug\net6.0\loty.genruntimeconfig.cache
+C:\Users\Jakub Korban\Documents\GitHub\loty\obj\Debug\net6.0\ref\loty.dll

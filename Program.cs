@@ -17,11 +17,11 @@ namespace Zadanie_ParametryTrojkata
         Console.WriteLine("Proszę podać datę urodzenia osoby której będzie bilet");
 
         Start:
-        Console.Write("Miesiąc: ");
+        Console.Write("Miesiąc (NR): ");
         var miesiacUr = Convert.ToInt32(Console.ReadLine().Trim());
-        Console.Write("Dzień: ");
+        Console.Write("Dzień (NR): ");
         var dzienUr = Convert.ToInt32(Console.ReadLine().Trim());
-        Console.Write("Rok: ");
+        Console.Write("Rok (NR): ");
         var rokUr = Convert.ToInt32(Console.ReadLine().Trim());
         DateTime urodz = new DateTime(rokUr, miesiacUr, dzienUr);
 
@@ -42,11 +42,11 @@ namespace Zadanie_ParametryTrojkata
         else{
             Console.WriteLine("Proszę podać datę lotu");      
             Lot:
-            Console.Write("Miesiąc: ");
+            Console.Write("Miesiąc (NR): ");
             var miesiacLot = Convert.ToInt32(Console.ReadLine().Trim());
-            Console.Write("Dzień: ");
+            Console.Write("Dzień (NR): ");
             var dzienLot = Convert.ToInt32(Console.ReadLine().Trim());
-            Console.Write("Rok: ");
+            Console.Write("Rok (NR): ");
             var rokLot = Convert.ToInt32(Console.ReadLine().Trim());
             DateTime dataLot = new DateTime(rokLot, miesiacLot, dzienLot);
 
